@@ -4,12 +4,15 @@ version = "0.1.0"
 description = ""
 authors = ["Ryan Wiesenberg <rmwiesenberg@gmail.com>"]
 readme = "README.md"
+license = "MIT"
+include = ["cards/data/all-cards.db"]
 
 [tool.poetry.dependencies]
 python = "^3.10"
 opencv-python = "^4.10.0.84"
 pandas = "^2.2.3"
-
+sqlmodel = "^0.0.22"
+tqdm = "^4.67.1"
 
 [build-system]
 requires = ["poetry-core"]

@@ -1,14 +1,13 @@
+import logging
+from sqlmodel import select
+
 import cv2
 
+from cards.db import get_engine, get_num_cards
 from cards.img import get_cam
 
 if __name__ == '__main__':
-    cam = get_cam()
+    logging.basicConfig(level=logging.DEBUG)
 
-    while True:
-        result, img = cam.read()
-        cv2.imshow("Cam", img)
-        if cv2.waitKey(0) & 0xFF == ord('q'):
-            break
-
-    cv2.destroyAllWindows()
+    engine = get_engine()
+    logging.info(f"Ready with {get_num_cards(engine)} cards")
